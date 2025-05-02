@@ -94,6 +94,7 @@ public class App {
 		List<PilotoMoto> listPilotoMoto = null;
 		
 		frmCircuito = new JFrame();
+		frmCircuito.getContentPane().setBackground(new Color(192, 192, 192));
 		frmCircuito.setTitle("Circuito");
 		frmCircuito.setBounds(100, 100, 1600, 900);
 		frmCircuito.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,68 +103,68 @@ public class App {
 		
 		textField_IdMoto = new JTextField();
 		textField_IdMoto.setEditable(false);
-		textField_IdMoto.setBounds(36, 366, 59, 19);
+		textField_IdMoto.setBounds(52, 366, 59, 19);
 		frmCircuito.getContentPane().add(textField_IdMoto);
 		textField_IdMoto.setColumns(10);
 		
 		textField_Marca = new JTextField();
-		textField_Marca.setBounds(96, 366, 114, 19);
+		textField_Marca.setBounds(137, 366, 114, 19);
 		frmCircuito.getContentPane().add(textField_Marca);
 		textField_Marca.setColumns(10);
 		
 		textField_Modelo = new JTextField();
-		textField_Modelo.setBounds(214, 366, 114, 19);
+		textField_Modelo.setBounds(277, 366, 114, 19);
 		frmCircuito.getContentPane().add(textField_Modelo);
 		textField_Modelo.setColumns(10);
 		
 		textField_Cilindrada = new JTextField();
-		textField_Cilindrada.setBounds(338, 366, 114, 19);
+		textField_Cilindrada.setBounds(418, 366, 114, 19);
 		frmCircuito.getContentPane().add(textField_Cilindrada);
 		textField_Cilindrada.setColumns(10);
 		
 		textField_Caballos = new JTextField();
-		textField_Caballos.setBounds(470, 366, 114, 19);
+		textField_Caballos.setBounds(556, 366, 114, 19);
 		frmCircuito.getContentPane().add(textField_Caballos);
 		textField_Caballos.setColumns(10);
 		
 		textField_IdPiloto = new JTextField();
 		textField_IdPiloto.setEditable(false);
-		textField_IdPiloto.setBounds(10, 775, 114, 19);
+		textField_IdPiloto.setBounds(10, 758, 59, 19);
 		frmCircuito.getContentPane().add(textField_IdPiloto);
 		textField_IdPiloto.setColumns(10);
 		
 		textField_Nombre = new JTextField();
-		textField_Nombre.setBounds(160, 775, 114, 19);
+		textField_Nombre.setBounds(79, 758, 114, 19);
 		frmCircuito.getContentPane().add(textField_Nombre);
 		textField_Nombre.setColumns(10);
 		
 		textField_Edad = new JTextField();
-		textField_Edad.setBounds(305, 831, 114, 19);
+		textField_Edad.setBounds(203, 758, 59, 19);
 		frmCircuito.getContentPane().add(textField_Edad);
 		textField_Edad.setColumns(10);
 		
 		textField_Nacionalidad = new JTextField();
-		textField_Nacionalidad.setBounds(438, 831, 114, 19);
+		textField_Nacionalidad.setBounds(272, 758, 150, 19);
 		frmCircuito.getContentPane().add(textField_Nacionalidad);
 		textField_Nacionalidad.setColumns(10);
 		
 		textField_Escuderia = new JTextField();
-		textField_Escuderia.setBounds(10, 831, 114, 19);
+		textField_Escuderia.setBounds(432, 758, 114, 19);
 		frmCircuito.getContentPane().add(textField_Escuderia);
 		textField_Escuderia.setColumns(10);
 		
 		textField_TiempoVuelta = new JTextField();
-		textField_TiempoVuelta.setBounds(160, 831, 114, 19);
+		textField_TiempoVuelta.setBounds(556, 758, 150, 19);
 		frmCircuito.getContentPane().add(textField_TiempoVuelta);
 		textField_TiempoVuelta.setColumns(10);
 
 		textField_PilotoPM = new JTextField();
-		textField_PilotoPM.setBounds(1028, 327, 86, 20);
+		textField_PilotoPM.setBounds(946, 366, 59, 20);
 		frmCircuito.getContentPane().add(textField_PilotoPM);
 		textField_PilotoPM.setColumns(10);
 		
 		textField_MotoPM = new JTextField();
-		textField_MotoPM.setBounds(1128, 327, 86, 20);
+		textField_MotoPM.setBounds(1028, 366, 86, 20);
 		frmCircuito.getContentPane().add(textField_MotoPM);
 		textField_MotoPM.setColumns(10);
 		
@@ -171,7 +172,7 @@ public class App {
 		settings.setFormatForDatesCommonEra("dd/MM/yyyy"); // formato europeo
 
 		DatePicker datePickerPM = new DatePicker(settings);
-		datePickerPM.setBounds(920, 220, 150, 25);
+		datePickerPM.setBounds(1000, 400, 150, 25);
 		frmCircuito.getContentPane().add(datePickerPM);
 
 
@@ -218,7 +219,7 @@ public class App {
 		tableMoto.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
 		JScrollPane scrollPaneMoto = new JScrollPane();
-		scrollPaneMoto.setBounds(10, 44, 614, 285);
+		scrollPaneMoto.setBounds(10, 44, 696, 285);
 		frmCircuito.getContentPane().add(scrollPaneMoto);
 		
 		scrollPaneMoto.setViewportView(tableMoto);
@@ -269,7 +270,7 @@ public class App {
 		tablePiloto.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
 		JScrollPane scrollPanePiloto = new JScrollPane();
-		scrollPanePiloto.setBounds(10, 442, 614, 285);
+		scrollPanePiloto.setBounds(10, 442, 696, 285);
 		frmCircuito.getContentPane().add(scrollPanePiloto);
 		
 		scrollPanePiloto.setViewportView(tablePiloto);
@@ -315,7 +316,7 @@ public class App {
 			}
 		});
 		JScrollPane scrollPanePilotoMoto = new JScrollPane(tablePilotoMoto);
-		scrollPanePilotoMoto.setBounds(875, 9, 600, 200);
+		scrollPanePilotoMoto.setBounds(869, 44, 614, 285);
 		frmCircuito.getContentPane().add(scrollPanePilotoMoto);
 
 
@@ -363,6 +364,8 @@ public class App {
 
 		
 		JButton btnGuardarMoto = new JButton("Guardar");
+		btnGuardarMoto.setBackground(new Color(69, 153, 60));
+		btnGuardarMoto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnGuardarMoto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -392,67 +395,80 @@ public class App {
 				}
 			}
 		});
-		btnGuardarMoto.setBounds(634, 40, 117, 25);
+		btnGuardarMoto.setBounds(716, 129, 145, 40);
 		frmCircuito.getContentPane().add(btnGuardarMoto);		
 		
 		JLabel lblId = new JLabel("ID");
+		lblId.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblId.setHorizontalAlignment(SwingConstants.CENTER);
-		lblId.setBounds(26, 340, 59, 15);
+		lblId.setBounds(52, 340, 59, 15);
 		frmCircuito.getContentPane().add(lblId);
 		
 		JLabel lblMarca = new JLabel("MARCA");
+		lblMarca.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblMarca.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMarca.setBounds(96, 340, 113, 15);
+		lblMarca.setBounds(138, 340, 113, 15);
 		frmCircuito.getContentPane().add(lblMarca);
 		
 		JLabel lblModelo = new JLabel("MODELO");
+		lblModelo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblModelo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblModelo.setBounds(204, 340, 114, 15);
+		lblModelo.setBounds(277, 340, 114, 15);
 		frmCircuito.getContentPane().add(lblModelo);
 		
 		JLabel lblCilindrada = new JLabel("CILINDRADA");
+		lblCilindrada.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblCilindrada.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCilindrada.setBounds(328, 340, 114, 15);
+		lblCilindrada.setBounds(418, 340, 114, 15);
 		frmCircuito.getContentPane().add(lblCilindrada);
 		
 		JLabel lblCaballos = new JLabel("CABALLOS");
+		lblCaballos.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblCaballos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCaballos.setBounds(460, 340, 114, 15);
+		lblCaballos.setBounds(556, 340, 114, 15);
 		frmCircuito.getContentPane().add(lblCaballos);
 		
 
 		
 		JLabel lblId_1 = new JLabel("ID");
+		lblId_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblId_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblId_1.setBounds(25, 749, 70, 15);
+		lblId_1.setBounds(10, 738, 59, 15);
 		frmCircuito.getContentPane().add(lblId_1);
 		
 		JLabel lblNombre = new JLabel("NOMBRE");
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNombre.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNombre.setBounds(183, 749, 70, 15);
+		lblNombre.setBounds(79, 738, 114, 15);
 		frmCircuito.getContentPane().add(lblNombre);
 		
 		JLabel lblEdad = new JLabel("EDAD");
+		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblEdad.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEdad.setBounds(320, 805, 70, 15);
+		lblEdad.setBounds(203, 738, 59, 15);
 		frmCircuito.getContentPane().add(lblEdad);
 		
 		JLabel lblNacionalidad = new JLabel("NACIONALIDAD");
+		lblNacionalidad.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNacionalidad.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNacionalidad.setBounds(449, 805, 103, 15);
+		lblNacionalidad.setBounds(272, 738, 150, 15);
 		frmCircuito.getContentPane().add(lblNacionalidad);
 		
 		JLabel lblEscuderia = new JLabel("ESCUDERIA");
+		lblEscuderia.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblEscuderia.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscuderia.setBounds(10, 805, 114, 15);
+		lblEscuderia.setBounds(432, 738, 114, 15);
 		frmCircuito.getContentPane().add(lblEscuderia);
 		
 		JLabel lblTiempoVuelta = new JLabel("TIEMPO VUELTA");
+		lblTiempoVuelta.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTiempoVuelta.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTiempoVuelta.setBounds(160, 805, 122, 15);
+		lblTiempoVuelta.setBounds(556, 738, 150, 15);
 		frmCircuito.getContentPane().add(lblTiempoVuelta);
 		
 		JButton btnGuardarPiloto = new JButton("Guardar");
+		btnGuardarPiloto.setBackground(new Color(69, 153, 60));
+		btnGuardarPiloto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnGuardarPiloto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -485,10 +501,12 @@ public class App {
 				}
 			}
 		});
-		btnGuardarPiloto.setBounds(634, 313, 117, 25);
+		btnGuardarPiloto.setBounds(716, 512, 145, 40);
 		frmCircuito.getContentPane().add(btnGuardarPiloto);
 		
 		JButton btnActualizarMoto = new JButton("Actualizar");
+		btnActualizarMoto.setBackground(new Color(221, 183, 68));
+		btnActualizarMoto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnActualizarMoto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -514,10 +532,12 @@ public class App {
 			    }
 			}
 		});
-		btnActualizarMoto.setBounds(634, 85, 117, 25);
+		btnActualizarMoto.setBounds(716, 180, 145, 40);
 		frmCircuito.getContentPane().add(btnActualizarMoto);
 		
 		JButton btnActualizarPiloto = new JButton("Actualizar");
+		btnActualizarPiloto.setBackground(new Color(221, 183, 68));
+		btnActualizarPiloto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnActualizarPiloto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -547,10 +567,12 @@ public class App {
 			    }
 			}
 		});
-		btnActualizarPiloto.setBounds(634, 356, 117, 25);
+		btnActualizarPiloto.setBounds(716, 563, 145, 40);
 		frmCircuito.getContentPane().add(btnActualizarPiloto);
 		
 		JButton btnBorrarMoto = new JButton("Borrar");
+		btnBorrarMoto.setBackground(new Color(160, 33, 33));
+		btnBorrarMoto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnBorrarMoto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -574,10 +596,12 @@ public class App {
 			    }
 			}
 		});
-		btnBorrarMoto.setBounds(634, 122, 117, 25);
+		btnBorrarMoto.setBounds(716, 231, 145, 40);
 		frmCircuito.getContentPane().add(btnBorrarMoto);
 		
 		JButton btnBorrarPiloto = new JButton("Borrar");
+		btnBorrarPiloto.setBackground(new Color(160, 33, 33));
+		btnBorrarPiloto.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnBorrarPiloto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -605,7 +629,7 @@ public class App {
 			    }
 			}
 		});
-		btnBorrarPiloto.setBounds(634, 392, 117, 25);
+		btnBorrarPiloto.setBounds(716, 614, 145, 40);
 		frmCircuito.getContentPane().add(btnBorrarPiloto);
 		
 		
@@ -614,7 +638,7 @@ public class App {
 		
 		
 		JButton btnAsignar = new JButton("Asignar");
-		btnAsignar.setBounds(1272, 325, 100, 25);
+		btnAsignar.setBounds(1287, 501, 100, 25);
 		frmCircuito.getContentPane().add(btnAsignar);
 
 		btnAsignar.addMouseListener(new MouseAdapter() {
@@ -780,30 +804,32 @@ public class App {
 
 		
 		JLabel lblPilotoPM = new JLabel("PILOTO");
-		lblPilotoPM.setBounds(1056, 302, 46, 14);
+		lblPilotoPM.setBounds(946, 340, 46, 14);
 		frmCircuito.getContentPane().add(lblPilotoPM);
 		
 		JLabel lblMotoPM = new JLabel("MOTO");
-		lblMotoPM.setBounds(1150, 302, 46, 14);
+		lblMotoPM.setBounds(1043, 341, 46, 14);
 		frmCircuito.getContentPane().add(lblMotoPM);
 		
 		JLabel lblNewLabel_2 = new JLabel("TABLA MOTO");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(78, 9, 269, 35);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_2.setBounds(10, 11, 696, 35);
 		frmCircuito.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("TABLA PILOTO");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_3.setBounds(54, 403, 220, 32);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblNewLabel_3.setBounds(10, 407, 696, 32);
 		frmCircuito.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblId_2 = new JLabel("ID");
-		lblId_2.setBounds(959, 302, 46, 14);
+		lblId_2.setBounds(869, 341, 59, 14);
 		frmCircuito.getContentPane().add(lblId_2);
 		
 		textField_IdPM = new JTextField();
 		textField_IdPM.setEditable(false);
-		textField_IdPM.setBounds(932, 327, 86, 20);
+		textField_IdPM.setBounds(869, 366, 59, 20);
 		frmCircuito.getContentPane().add(textField_IdPM);
 		textField_IdPM.setColumns(10);
 		
@@ -835,7 +861,7 @@ public class App {
 		});
 
 		JButton btnActualizarFecha = new JButton("Actualizar fecha");
-		btnActualizarFecha.setBounds(1258, 287, 150, 25);
+		btnActualizarFecha.setBounds(1424, 473, 150, 25);
 		frmCircuito.getContentPane().add(btnActualizarFecha);
 
 		btnActualizarFecha.addMouseListener(new MouseAdapter() {
