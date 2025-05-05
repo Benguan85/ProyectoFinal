@@ -4,93 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "piloto")
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Piloto {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	int id;
 
-	@Column(name = "nombre")
-	String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
 
-	@Column(name = "edad")
-	int edad;
+    @Column(name = "nombre")
+    private String nombre;
 
-	@Column(name = "nacionalidad")
-	String nacionalidad;
+    @Column(name = "edad")
+    private int edad;
 
-	@Column(name = "escuderia")
-	String escuderia;
+    @Column(name = "nacionalidad")
+    private String nacionalidad;
 
-	@Column(name = "tiempo_vuelta")
-	double tiempo_vuelta;
+    @Column(name = "escuderia")
+    private String escuderia;
 
-	public Piloto() {
-		super();
-	}
-
-	public Piloto(String nombre, int edad, String nacionalidad, String escuderia, double tiempo_vuelta) {
-		super();
-		this.nombre = nombre;
-		this.edad = edad;
-		this.nacionalidad = nacionalidad;
-		this.escuderia = escuderia;
-		this.tiempo_vuelta = tiempo_vuelta;
-	}
+    @Column(name = "tiempo_vuelta")
+    private double tiempo_vuelta;
 
     @OneToMany(mappedBy = "piloto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PilotoMoto> participaciones = new ArrayList<>();
-	
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
-
-	public String getEscuderia() {
-		return escuderia;
-	}
-
-	public void setEscuderia(String escuderia) {
-		this.escuderia = escuderia;
-	}
-
-	public double getTiempo_vuelta() {
-		return tiempo_vuelta;
-	}
-
-	public void setTiempo_vuelta(double tiempo_vuelta) {
-		this.tiempo_vuelta = tiempo_vuelta;
-	}
+    public Piloto(String nombre, int edad, String nacionalidad, String escuderia, double tiempo_vuelta) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.nacionalidad = nacionalidad;
+        this.escuderia = escuderia;
+        this.tiempo_vuelta = tiempo_vuelta;
+    }
 }
+

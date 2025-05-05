@@ -1,15 +1,22 @@
 package com.hibernate.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
 import java.sql.Date;
 
 @Entity
 @Table(name = "piloto_moto")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PilotoMoto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne(optional = false)
@@ -19,53 +26,13 @@ public class PilotoMoto {
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_moto", nullable = false)
     private Moto moto;
-    
-	@Column(name = "fecha")
+
+    @Column(name = "fecha")
     private Date fecha;
 
-	public PilotoMoto() {
-		super();
-	}
-
-	public PilotoMoto(Piloto piloto, Moto moto, Date fecha) {
-		super();
-		this.piloto = piloto;
-		this.moto = moto;
-		this.fecha = fecha;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Piloto getPiloto() {
-		return piloto;
-	}
-
-	public void setPiloto(Piloto piloto) {
-		this.piloto = piloto;
-	}
-
-	public Moto getMoto() {
-		return moto;
-	}
-
-	public void setMoto(Moto moto) {
-		this.moto = moto;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-    // Constructores, getters y setters...
-    
+    public PilotoMoto(Piloto piloto, Moto moto, Date fecha) {
+        this.piloto = piloto;
+        this.moto = moto;
+        this.fecha = fecha;
+    }
 }
