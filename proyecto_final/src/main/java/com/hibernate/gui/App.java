@@ -61,7 +61,7 @@ public class App {
 	private ResourceBundle msgs;
 
 	// Constante para determinar que tiempo es el destacado en el circuito
-	final double TIEMPO_DESTACADO = 1.35;
+	final double TIEMPO_DESTACADO = 91.1;
 
 	/**
 	 * Launch the application.
@@ -83,8 +83,9 @@ public class App {
 	 * Create the application.
 	 */
 	public App() {
-		// Puedes forzar el idioma así:
-		Locale locale = Locale.forLanguageTag("es");
+		// Aqui se configura que idima quieres que se muestre cuando ejecutas el
+		// programa:
+		Locale locale = Locale.forLanguageTag("es"); // Se puede cambiar entre "es" y "en"
 		msgs = ResourceBundle.getBundle("MessagesBundle", locale);
 		initialize();
 	}
@@ -534,28 +535,28 @@ public class App {
 				String cilindradaStr = textField_Cilindrada.getText();
 				String caballosStr = textField_Caballos.getText();
 
-				// Validar marca (solo letras)
+				// Valida que marca no esté vacio y solo sean letras
 				if (marca.length() == 0 || !marca.matches("\\D+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto1"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar modelo (solo letras)
+				// Valida que modelo no esté vacio y solo sean letras
 				if (modelo.length() == 0 || !modelo.matches("\\D+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto2"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar cilindrada (solo números)
+				// Valida que cilindrada no esté vacio y solo sean numeros
 				if (cilindradaStr.length() == 0 || !cilindradaStr.matches("\\d+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto3"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar caballos (solo números)
+				// Valida que cabllos no esté vacio y solo sean numeros
 				if (caballosStr.length() == 0 || !caballosStr.matches("\\d+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto4"), "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -612,35 +613,35 @@ public class App {
 					String cilindradaStr = textField_Cilindrada.getText();
 					String caballosStr = textField_Caballos.getText();
 
-					// Validar ID vacío o incorrecto
+					// Validar ID vacio
 					if (idStr.length() == 0) {
 						JOptionPane.showMessageDialog(null, msgs.getString("error.Moto0"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar marca (solo letras)
+					// Valida que marca no esté vacio y solo sean letras
 					if (marca.length() == 0 || !marca.matches("\\D+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto1"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar modelo (solo letras)
+					// Valida que modelo no esté vacio y solo sean letras
 					if (modelo.length() == 0 || !modelo.matches("\\D+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto2"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar cilindrada (solo números)
+					// Valida que cilindrada no esté vacio y solo sean numeros
 					if (cilindradaStr.length() == 0 || !cilindradaStr.matches("\\d+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto3"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar caballos (solo números)
+					// Valida que cabllos no esté vacio y solo sean numeros
 					if (caballosStr.length() == 0 || !caballosStr.matches("\\d+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Moto4"), "Error",
 								JOptionPane.ERROR_MESSAGE);
@@ -668,6 +669,7 @@ public class App {
 						modelMoto.addRow(row);
 					}
 
+					// Limpiar campos
 					textField_IdMoto.setText("");
 					textField_Marca.setText("");
 					textField_Modelo.setText("");
@@ -695,7 +697,7 @@ public class App {
 					int id = Integer.parseInt(textField_IdMoto.getText());
 					String idStr = textField_IdMoto.getText();
 
-					// Validar ID vacío o incorrecto
+					// Validar ID vacio
 					if (idStr.length() == 0) {
 						JOptionPane.showMessageDialog(null, msgs.getString("error.Moto0"), "Error",
 								JOptionPane.ERROR_MESSAGE);
@@ -716,6 +718,7 @@ public class App {
 						modelMoto.addRow(row);
 					}
 
+					// Limpiar campos
 					textField_IdMoto.setText("");
 					textField_Marca.setText("");
 					textField_Modelo.setText("");
@@ -744,28 +747,28 @@ public class App {
 				String escuderia = textField_Escuderia.getText();
 				String tiempoVueltaStr = textField_TiempoVuelta.getText();
 
-				// Validar nombre (solo letras)
+				// Valida que nombre no esté vacio y solo sean letras
 				if (nombre.length() == 0 || !nombre.matches("\\D+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto1"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar edad (solo números)
+				// Valida que edad no esté vacio y solo sean numeros
 				if (edadStr.length() == 0 || !edadStr.matches("\\d+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto2"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar nacionalidad (solo letras)
+				// Valida que nacionalidad no esté vacio y solo sean letras
 				if (nacionalidad.length() == 0 || !nacionalidad.matches("\\D+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto3"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
-				// Validar escudería (solo letras)
+				// Valida que escuderia no esté vacio y solo sean letras
 				if (escuderia.length() == 0 || !escuderia.matches("\\D+")) {
 					JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto4"), "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -783,7 +786,6 @@ public class App {
 					int edad = Integer.parseInt(edadStr);
 					double tiempo_vuelta = Double.parseDouble(tiempoVueltaStr);
 
-					// Crear el piloto y guardarlo
 					Piloto s = new Piloto(nombre, edad, nacionalidad, escuderia, tiempo_vuelta);
 					daoPiloto.insertarPiloto(s);
 
@@ -834,42 +836,42 @@ public class App {
 					String escuderia = textField_Escuderia.getText();
 					String tiempoVueltaStr = textField_TiempoVuelta.getText();
 
-					// Validar ID vacío o incorrecto
+					// Validar ID vacio
 					if (idStr.length() == 0) {
 						JOptionPane.showMessageDialog(null, msgs.getString("error.Piloto0"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar nombre (solo letras)
+					// Valida que nombre no esté vacio y solo sean letras
 					if (nombre.length() == 0 || !nombre.matches("\\D+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto1"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar edad (solo números)
+					// Valida que edad no esté vacio y solo sean numeros
 					if (edadStr.length() == 0 || !edadStr.matches("\\d+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto2"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar nacionalidad (solo letras)
+					// Valida que nacionalidad no esté vacio y solo sean letras
 					if (nacionalidad.length() == 0 || !nacionalidad.matches("\\D+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto3"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar escudería (solo letras)
+					// Valida que escuderia no esté vacio y solo sean letras
 					if (escuderia.length() == 0 || !escuderia.matches("\\D+")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto4"), "Error",
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					// Validar tiempo de vuelta (solo números y decimales)
+					// Valida tiempo de vuelta no este vacio y solo admite numeros decimales
 					if (tiempoVueltaStr.length() == 0 || !tiempoVueltaStr.matches("\\d+(\\.\\d+)?")) {
 						JOptionPane.showMessageDialog(frmCircuito, msgs.getString("error.Piloto5"), "Error",
 								JOptionPane.ERROR_MESSAGE);
@@ -880,11 +882,9 @@ public class App {
 					int edad = Integer.parseInt(edadStr);
 					double tiempo_vuelta = Double.parseDouble(tiempoVueltaStr);
 
-					// Crear el piloto con los datos
 					Piloto p = new Piloto(nombre, edad, nacionalidad, escuderia, tiempo_vuelta);
 					p.setId(id);
 
-					// Actualizar el piloto en la base de datos
 					daoPiloto.actualizarPiloto(p);
 
 					// Actualizar tabla
@@ -930,7 +930,7 @@ public class App {
 					int id = Integer.parseInt(textField_IdPiloto.getText());
 					String idStr = textField_IdPiloto.getText();
 
-					// Validar ID vacío o incorrecto
+					// Validar ID vacio
 					if (idStr.length() == 0) {
 						JOptionPane.showMessageDialog(null, msgs.getString("error.Piloto0"), "Error",
 								JOptionPane.ERROR_MESSAGE);
@@ -953,6 +953,7 @@ public class App {
 						modelPiloto.addRow(row);
 					}
 
+					// Limpia textField y la fecha
 					textField_IdPiloto.setText("");
 					textField_Nombre.setText("");
 					textField_Edad.setText("");
@@ -975,7 +976,6 @@ public class App {
 		btnAsignar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAsignar.setBounds(1277, 407, 200, 40);
 		frmCircuito.getContentPane().add(btnAsignar);
-
 		btnAsignar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -983,19 +983,21 @@ public class App {
 				String idMotoStr = textField_MotoPM.getText();
 				LocalDate selectedDate = datePickerPM.getDate();
 
-				// Validar campos vacíos
+				// Verificfa el ID de piloto no esté vacio y que sea un numero
 				if (idPilotoStr.length() == 0 || !idPilotoStr.matches("\\d+")) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoAsignar1"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
+				// Verificfa el ID de moto no esté vacio y que sea un numero
 				if (idMotoStr.length() == 0 || !idMotoStr.matches("\\d+")) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoAsignar2"), "Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 
+				// Verifica que tiene que haberse seleccionado una fecha
 				if (selectedDate == null) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoAsignar3"), "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -1006,7 +1008,7 @@ public class App {
 				int idMoto = Integer.parseInt(idMotoStr);
 				Date fecha = Date.valueOf(selectedDate);
 
-				// Validar existencia de piloto y moto
+				// Verifica que el piloto con ese ID existe en la base de datos
 				Piloto piloto = daoPiloto.seleccionarPilotoConId(idPiloto);
 				if (piloto == null) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoAsignar4"), "Error",
@@ -1014,6 +1016,7 @@ public class App {
 					return;
 				}
 
+				// Verifica que la moto con ese ID existe en la base de datos
 				Moto moto = daoMoto.seleccionarMotoConId(idMoto);
 				if (moto == null) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoAsignar5"), "Error",
@@ -1022,13 +1025,15 @@ public class App {
 				}
 
 				try {
+					// Crea una nueva asignación Piloto-Moto
 					PilotoMoto pm = new PilotoMoto(piloto, moto, fecha);
 					daoPilotoMoto.insertar(pm);
 
-					// Actualizar tabla
 					modelPilotoMoto.setRowCount(0);
+
 					DateTimeFormatter formatoEuropeo = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+					// Actualizar tabla
 					for (PilotoMoto participacion : daoPilotoMoto.seleccionarTodas()) {
 						Object[] row = new Object[4];
 						row[0] = participacion.getId();
@@ -1065,7 +1070,7 @@ public class App {
 			public void mouseClicked(MouseEvent e) {
 				String idParticipacionStr = textField_IdPM.getText();
 
-				// Validar ID vacío o incorrecto
+				// Validar ID vacio
 				if (idParticipacionStr.length() == 0) {
 					JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoActualizar1"), "Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -1125,9 +1130,9 @@ public class App {
 			public void mouseClicked(MouseEvent e) {
 				try {
 					int idParticipacion = Integer.parseInt(textField_IdPM.getText());
-					String idStr = textField_IdPiloto.getText();
+					String idStr = textField_IdPM.getText();
 
-					// Validar ID vacío o incorrecto
+					// Validar ID vacio
 					if (idStr.length() == 0) {
 						JOptionPane.showMessageDialog(null, msgs.getString("error.PilotoMotoBorrar1"), "Error",
 								JOptionPane.ERROR_MESSAGE);
@@ -1324,22 +1329,27 @@ public class App {
 
 		frmCircuito.getContentPane().setLayout(null);
 
+		// Boton para cambiar el idioma
 		JButton btnEspañol = new JButton("Español");
 		btnEspañol.setBounds(716, 37, 100, 30);
 		frmCircuito.getContentPane().add(btnEspañol);
 
+		// Boton para cambiar el idioma
 		JButton btnIngles = new JButton("English");
 		btnIngles.setBounds(813, 37, 100, 30);
 		frmCircuito.getContentPane().add(btnIngles);
 
-		// BOTÓN ESPAÑOL
+		// BOTON ESPAÑOL
 		btnEspañol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Cambiar texto de etiquetas, botones, etc.
 
+				// Carga el archivo de recursos "MessagesBundle" con el idioma español
 				msgs = ResourceBundle.getBundle("MessagesBundle", Locale.forLanguageTag("es-ES"));
 
+				// Actualiza el titulo de la ventana
 				frmCircuito.setTitle(msgs.getString("title"));
+
+				// Actualiza los textos de etiquetas moto
 				lblIdioma.setText(msgs.getString("label.idioma"));
 				btnGuardarMoto.setText(msgs.getString("button.guardar"));
 				lblId.setText(msgs.getString("label.id"));
@@ -1348,25 +1358,29 @@ public class App {
 				lblCilindrada.setText(msgs.getString("label.cilindrada"));
 				lblCaballos.setText(msgs.getString("label.caballos"));
 
+				// Actualiza los textos de etiquetas piloto
 				lblNombre.setText(msgs.getString("label.nombre"));
 				lblEdad.setText(msgs.getString("label.edad"));
 				lblNacionalidad.setText(msgs.getString("label.nacionalidad"));
 				lblEscuderia.setText(msgs.getString("label.escuderia"));
 				lblTiempoVuelta.setText(msgs.getString("label.tiempoVuelta"));
 
+				// Actualiza los textos de etiquetas piloto-moto
 				lblPilotoPM.setText(msgs.getString("label.piloto"));
 				lblMotoPM.setText(msgs.getString("label.moto"));
 				lblFecha.setText(msgs.getString("label.fecha"));
 
-				// Botones
+				// Actualiza los textos de botones moto
 				btnGuardarMoto.setText(msgs.getString("button.guardar"));
 				btnActualizarMoto.setText(msgs.getString("button.actualizar"));
 				btnBorrarMoto.setText(msgs.getString("button.borrar"));
 
+				// Actualiza los textos de botones piloto
 				btnGuardarPiloto.setText(msgs.getString("button.guardar"));
 				btnActualizarPiloto.setText(msgs.getString("button.actualizar"));
 				btnBorrarPiloto.setText(msgs.getString("button.borrar"));
 
+				// Actualiza los textos de botones piloto-moto
 				btnAsignar.setText(msgs.getString("button.asignar"));
 				btnFiltrarPorPiloto.setText(msgs.getString("button.filtrarPiloto"));
 				btnFiltrarPorMoto.setText(msgs.getString("button.filtrarMoto"));
@@ -1374,12 +1388,12 @@ public class App {
 				btnActualizarFecha.setText(msgs.getString("button.actualizarFecha"));
 				btnBorrarPM.setText(msgs.getString("button.borrar"));
 
-				// Etiquetas de las tablas
+				// Actualiza las etiquetas de encabezado de las tablas
 				lblTablaMoto.setText(msgs.getString("label.tablaMoto"));
 				lblTablaPiloto.setText(msgs.getString("label.tablaPiloto"));
 				lblTablaAsignar.setText(msgs.getString("label.tablaAsignar"));
 
-				// Cambiar encabezados de tableMoto
+				// Cambiar encabezado de tableMoto
 				String[] columnasESMoto = { "ID", "Marca", "Modelo", "Cilindrada", "Caballos" };
 				TableColumnModel cmMoto = tableMoto.getColumnModel();
 				for (int i = 0; i < columnasESMoto.length; i++) {
@@ -1387,7 +1401,7 @@ public class App {
 				}
 				tableMoto.getTableHeader().repaint();
 
-				// Cambiar encabezados de tablePiloto
+				// Cambiar encabezado de tablePiloto
 				String[] columnasESPiloto = { "ID", "Nombre", "Edad", "Nacionalidad", "Escudería", "Tiempo vuelta" };
 				TableColumnModel cmPiloto = tablePiloto.getColumnModel();
 				for (int i = 0; i < columnasESPiloto.length; i++) {
@@ -1395,7 +1409,7 @@ public class App {
 				}
 				tablePiloto.getTableHeader().repaint();
 
-				// Cambiar encabezados de tablePilotoMoto
+				// Cambiar encabezado de tablePilotoMoto
 				String[] columnasESPM = { "ID", "Piloto", "Moto", "Fecha" };
 				TableColumnModel cmPM = tablePilotoMoto.getColumnModel();
 				for (int i = 0; i < columnasESPM.length; i++) {
@@ -1405,13 +1419,17 @@ public class App {
 			}
 		});
 
-		// BOTÓN INGLÉS
+		// BOTON INGLES
 		btnIngles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+				// Carga el archivo de recursos "MessagesBundle" con el idioma ingles
 				msgs = ResourceBundle.getBundle("MessagesBundle", Locale.forLanguageTag("en-US"));
 
+				// Actualiza el titulo de la ventana
 				frmCircuito.setTitle(msgs.getString("title"));
+
+				// Actualiza las etiquetas moto
 				lblIdioma.setText(msgs.getString("label.idioma"));
 				btnGuardarMoto.setText(msgs.getString("button.guardar"));
 				lblId.setText(msgs.getString("label.id"));
@@ -1420,25 +1438,29 @@ public class App {
 				lblCilindrada.setText(msgs.getString("label.cilindrada"));
 				lblCaballos.setText(msgs.getString("label.caballos"));
 
+				// Actualiza las etiquetas piloto
 				lblNombre.setText(msgs.getString("label.nombre"));
 				lblEdad.setText(msgs.getString("label.edad"));
 				lblNacionalidad.setText(msgs.getString("label.nacionalidad"));
 				lblEscuderia.setText(msgs.getString("label.escuderia"));
 				lblTiempoVuelta.setText(msgs.getString("label.tiempoVuelta"));
 
+				// Actualiza las etiquetas pilo-moto
 				lblPilotoPM.setText(msgs.getString("label.piloto"));
 				lblMotoPM.setText(msgs.getString("label.moto"));
 				lblFecha.setText(msgs.getString("label.fecha"));
 
-				// Botones
+				// Actualiza los botones motos
 				btnGuardarMoto.setText(msgs.getString("button.guardar"));
 				btnActualizarMoto.setText(msgs.getString("button.actualizar"));
 				btnBorrarMoto.setText(msgs.getString("button.borrar"));
 
+				// Actualiza los botones pilotos
 				btnGuardarPiloto.setText(msgs.getString("button.guardar"));
 				btnActualizarPiloto.setText(msgs.getString("button.actualizar"));
 				btnBorrarPiloto.setText(msgs.getString("button.borrar"));
 
+				// Actualiza los botones piloto-moto
 				btnAsignar.setText(msgs.getString("button.asignar"));
 				btnFiltrarPorPiloto.setText(msgs.getString("button.filtrarPiloto"));
 				btnFiltrarPorMoto.setText(msgs.getString("button.filtrarMoto"));
@@ -1446,11 +1468,12 @@ public class App {
 				btnActualizarFecha.setText(msgs.getString("button.actualizarFecha"));
 				btnBorrarPM.setText(msgs.getString("button.borrar"));
 
-				// Etiquetas de las tablas
+				// Actualiza los encabezados de las tablas
 				lblTablaMoto.setText(msgs.getString("label.tablaMoto"));
 				lblTablaPiloto.setText(msgs.getString("label.tablaPiloto"));
 				lblTablaAsignar.setText(msgs.getString("label.tablaAsignar"));
 
+				// Cambiar encabezado de tableMoto
 				String[] columnasENMoto = { "ID", "Brand", "Model", "Displacement", "Horsepower" };
 				TableColumnModel cmMoto = tableMoto.getColumnModel();
 				for (int i = 0; i < columnasENMoto.length; i++) {
@@ -1458,6 +1481,7 @@ public class App {
 				}
 				tableMoto.getTableHeader().repaint();
 
+				// Cambiar encabezado de tablePiloto
 				String[] columnasENPiloto = { "ID", "Name", "Age", "Nationality", "Team", "Lap time" };
 				TableColumnModel cmPiloto = tablePiloto.getColumnModel();
 				for (int i = 0; i < columnasENPiloto.length; i++) {
@@ -1465,6 +1489,7 @@ public class App {
 				}
 				tablePiloto.getTableHeader().repaint();
 
+				// Cambiar encabezado de tablePilotoMoto
 				String[] columnasENPM = { "ID", "Rider", "Bike", "Date" };
 				TableColumnModel cmPM = tablePilotoMoto.getColumnModel();
 				for (int i = 0; i < columnasENPM.length; i++) {
@@ -1473,5 +1498,6 @@ public class App {
 				tablePilotoMoto.getTableHeader().repaint();
 			}
 		});
+
 	}
 }

@@ -15,11 +15,12 @@ import com.hibernate.model.PilotoMoto;
 public class HibernateUtil {
 
 	private static SessionFactory sessionFactory;
+
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
 			try {
 				Configuration configuration = new Configuration();
-				
+
 				Properties settings = new Properties();
 				settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
 				settings.put(Environment.URL, "jdbc:mysql://127.0.0.1:3307/proyecto_final?useSSL=false");
@@ -28,21 +29,21 @@ public class HibernateUtil {
 				settings.put(Environment.SHOW_SQL, "false");
 				settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 				settings.put(Environment.HBM2DDL_AUTO, "update");
-				
+
 				configuration.setProperties(settings);
-				
+
 				configuration.addAnnotatedClass(Moto.class);
 				configuration.addAnnotatedClass(Piloto.class);
 				configuration.addAnnotatedClass(PilotoMoto.class);
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();
-				
+
 				sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-					return sessionFactory;
+		return sessionFactory;
 	}
 }

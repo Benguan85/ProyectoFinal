@@ -15,30 +15,30 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Moto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private int id;
 
-    @Column(name = "marca")
-    private String marca;
+	@Column(name = "marca")
+	private String marca;
 
-    @Column(name = "modelo")
-    private String modelo;
+	@Column(name = "modelo")
+	private String modelo;
 
-    @Column(name = "cilindrada")
-    private int cilindrada;
+	@Column(name = "cilindrada")
+	private int cilindrada;
 
-    @Column(name = "caballos")
-    private int caballos;
+	@Column(name = "caballos")
+	private int caballos;
 
-    @OneToMany(mappedBy = "moto", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<PilotoMoto> usos = new ArrayList<>();
+	@OneToMany(mappedBy = "moto", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<PilotoMoto> usos = new ArrayList<>();
 
-    public Moto(String marca, String modelo, int cilindrada, int caballos) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.cilindrada = cilindrada;
-        this.caballos = caballos;
-    }
+	public Moto(String marca, String modelo, int cilindrada, int caballos) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cilindrada = cilindrada;
+		this.caballos = caballos;
+	}
 }
